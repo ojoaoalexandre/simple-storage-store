@@ -1,0 +1,22 @@
+version: '3.9'
+
+networks:
+  net-store:
+    driver: bridge
+
+services:
+  postgresql:
+    image: bitnami/postgresql:latest
+    ports:
+      - 5432:5432
+    volumes:
+      - 'postgres_data:/bitnami/postgres'
+    environment:
+      - POSTGRES_DATABASE=${DATABASE_NAME}
+      - POSTGRES_USERNAME=${DATABASE_USERNAME}
+      - POSTGRES_PASSWORD=${DATABASE_PASSWORD}
+    networks:
+      - net-store
+
+volumes:
+  postgres_data:
