@@ -1,0 +1,9 @@
+{
+  "extends": "@store-simple-storage/tsconfig/node.json",
+  "include": [
+    "./src/*"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

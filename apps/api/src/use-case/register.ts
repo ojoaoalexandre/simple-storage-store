@@ -1,5 +1,5 @@
-import { UsersRepository } from '@/repository/users.repository'
 import { User } from '@prisma/client'
+import { UsersRepository } from '../repository/users.repository'
 
 export type RegisterUseCaseRequest = {
   username: string

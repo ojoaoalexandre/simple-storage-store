@@ -1,0 +1,26 @@
+{
+  "name": "@store-simple-storage/api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsup src --out-dir build",
+    "lint": "eslint --fix"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@prisma/client": "^5.8.0",
+    "@types/node": "^20.10.8",
+    "fastify": "^4.25.2",
+    "typescript": "^5.3.3"
+  },
+  "devDependencies": {
+    "@store-simple-storage/eslint-config": "*",
+    "@store-simple-storage/tsconfig": "*",
+    "eslint": "^8.56.0",
+    "prisma": "^5.8.0",
+    "tsup": "^8.0.1"
+  }
+}

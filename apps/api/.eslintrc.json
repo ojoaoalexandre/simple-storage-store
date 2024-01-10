@@ -1,0 +1,3 @@
+{
+  "extends": "@store-simple-storage/eslint-config/node"
+}
