@@ -7,6 +7,6 @@ export type ProductsRepository = {
     title,
     description,
     price,
-  }: Prisma.ProductCreateInput): Promise<boolean>
+  }: Prisma.ProductCreateInput): Promise<Product>
   delete(id: string): Promise<boolean>
 }

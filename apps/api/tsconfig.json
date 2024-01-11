@@ -1,7 +1,14 @@
 {
   "extends": "@store-simple-storage/tsconfig/node.json",
+  "compilerOptions": {
+    "plugins": [
+      {
+      "name": "next"
+      }
+    ]
+  },
   "include": [
-    "./src/*"
+    "**/*.ts",
   ],
   "exclude": [
     "node_modules"

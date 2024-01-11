@@ -27,7 +27,7 @@ export class PrismaProductsRepository implements ProductsRepository {
     title,
     description,
     price,
-  }: Prisma.ProductCreateInput): Promise<boolean> {
+  }: Prisma.ProductCreateInput): Promise<Product> {
     const product = await database.product.create({
       data: {
         title,
@@ -36,11 +36,7 @@ export class PrismaProductsRepository implements ProductsRepository {
       },
     })
 
-    if (product) {
-      return true
-    }
-
-    return false
+    return product
   }
 
   async delete(id: string): Promise<boolean> {

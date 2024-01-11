@@ -1,4 +1,6 @@
 import { User } from '@prisma/client'
+import bcryptjs from 'bcryptjs'
+import { CredentialsInvalidError } from '../repository/errors/credentials-invalid.error'
 import { UsersRepository } from '../repository/users.repository'
 
 type AuthenticateUseCaseResponse = {
@@ -15,13 +17,18 @@ export class AuthenticateUseCase {
 
   async execute({
     email,
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     password,
   }: AuthenticateUseCaseRequest): Promise<AuthenticateUseCaseResponse> {
     const user = await this.usersRepository.findByEmail(email)
 
     if (!user) {
-      throw new Error('User not exists')
+      throw new CredentialsInvalidError()
+    }
+
+    const isSamePassword = await bcryptjs.compare(password, user.password)
+
+    if (!isSamePassword) {
+      throw new CredentialsInvalidError()
     }
 
     return {

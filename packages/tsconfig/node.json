@@ -1,19 +1,14 @@
 {
   "compilerOptions": {
-    "target": "ES2021",
+    "target": "ES6",
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
     "noEmit": true,
     "esModuleInterop": true,
-    "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "incremental": true,
-    "paths": {
-      "@/*": [
-        "./src/*"
-      ]
-    }
+    "moduleResolution": "bundler"
   }
 }
