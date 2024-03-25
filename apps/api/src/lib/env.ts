@@ -3,8 +3,8 @@ import { z } from 'zod'
 
 const schema = z.object({
   HOST: z.string().min(1),
-  PORT: z.coerce.number().default(3001),
-  JWT: z.string().min(1),
+  PORT: z.coerce.number().default(3333),
+  JWT: z.string().min(1)
 })
 
 const _env = schema.safeParse(process.env)

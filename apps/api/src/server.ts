@@ -4,7 +4,7 @@ import { env } from './lib/env'
 app
   .listen({
     host: env.HOST,
-    port: env.PORT,
+    port: env.PORT
   })
   .then(() => {
     console.log('Server is running on port ')

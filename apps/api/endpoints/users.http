@@ -1,0 +1,7 @@
+POST {{$dotenv BASE_URL}}/api/register
+Content-Type: application/json
+
+{
+  "username": "",
+  "password": ""
+}

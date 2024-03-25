@@ -1,14 +1,14 @@
 {
   "extends": "@store-simple-storage/tsconfig/node.json",
   "compilerOptions": {
-    "plugins": [
-      {
-      "name": "next"
-      }
-    ]
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
   },
   "include": [
-    "**/*.ts",
+    "src/**/*.ts",
+    ".next/types/**/*.ts"
   ],
   "exclude": [
     "node_modules"

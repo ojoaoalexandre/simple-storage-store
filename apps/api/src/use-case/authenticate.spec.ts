@@ -22,12 +22,12 @@ describe('Authenticate', () => {
     await repository.create({
       id: randomUUID(),
       username,
-      password: await bcryptjs.hash(password, 6),
+      password: await bcryptjs.hash(password, 6)
     })
 
     const { user } = await sut.execute({
       email: username,
-      password,
+      password
     })
 
     expect(user.id).toEqual(expect.any(String))
@@ -37,8 +37,8 @@ describe('Authenticate', () => {
     expect(() =>
       sut.execute({
         email: username,
-        password,
-      }),
+        password
+      })
     ).rejects.toBeInstanceOf(CredentialsInvalidError)
   })
 
@@ -46,14 +46,14 @@ describe('Authenticate', () => {
     await repository.create({
       id: randomUUID(),
       username,
-      password: await bcryptjs.hash(passwordWrong, 6),
+      password: await bcryptjs.hash(passwordWrong, 6)
     })
 
     await expect(() =>
       sut.execute({
         email: username,
-        password,
-      }),
+        password
+      })
     ).rejects.toBeInstanceOf(CredentialsInvalidError)
   })
 })

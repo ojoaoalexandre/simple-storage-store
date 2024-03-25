@@ -1,7 +1,11 @@
 {
   "extends": "@store-simple-storage/tsconfig/next.json",
   "compilerOptions": {
-    "plugins": [{ "name": "next" }]
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
   },
   "include": [
     "next-env.d.ts",

@@ -8,13 +8,13 @@ export class FetchAdapter implements HttpAdapter {
 
     const headers = {
       ...init?.headers,
-      ...defaultHeader,
+      ...defaultHeader
     }
 
     const response = await fetch(url, {
       method: 'GET',
       ...init,
-      headers,
+      headers
     })
 
     if (response.ok) {
@@ -36,14 +36,14 @@ export class FetchAdapter implements HttpAdapter {
 
     const headers = {
       ...init?.headers,
-      ...defaultHeader,
+      ...defaultHeader
     }
 
     const response = await fetch(url, {
       method: 'POST',
       ...init,
       headers,
-      body: JSON.stringify(body),
+      body: JSON.stringify(body)
     })
 
     if (response.ok) {
@@ -65,14 +65,14 @@ export class FetchAdapter implements HttpAdapter {
 
     const headers = {
       ...init?.headers,
-      ...defaultHeader,
+      ...defaultHeader
     }
 
     const response = await fetch(url, {
       method: 'PUT',
       ...init,
       headers,
-      body: JSON.stringify(body),
+      body: JSON.stringify(body)
     })
 
     if (response.ok) {
@@ -94,14 +94,14 @@ export class FetchAdapter implements HttpAdapter {
 
     const headers = {
       ...init?.headers,
-      ...defaultHeader,
+      ...defaultHeader
     }
 
     const response = await fetch(url, {
       method: 'DELETE',
       ...init,
       headers,
-      body: JSON.stringify(body),
+      body: JSON.stringify(body)
     })
 
     if (response.ok) {
@@ -124,12 +124,12 @@ export class FetchAdapter implements HttpAdapter {
     if (session && session.access_token) {
       return {
         'Content-Type': 'application/json',
-        Authorization: `Bearer ${session.access_token}`,
+        Authorization: `Bearer ${session.access_token}`
       }
     }
 
     return {
-      'Content-Type': 'application/json',
+      'Content-Type': 'application/json'
     }
   }
 }

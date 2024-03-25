@@ -2,9 +2,11 @@
   "name": "@store-simple-storage/api",
   "version": "1.0.0",
   "description": "Simple Store: API",
+  "private": true,
   "type": "module",
   "main": "src/build/app.js",
   "scripts": {
+    "predev": "prisma generate",
     "dev": "tsx watch src/server.ts",
     "build": "tsup src --out-dir build",
     "start": "node build/server.js",

@@ -1,4 +1,5 @@
 {
+  "root": true,
   "extends": [
     "@store-simple-storage/eslint-config/next",
     "next/core-web-vitals"

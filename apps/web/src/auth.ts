@@ -26,7 +26,7 @@ export const { auth, signIn, signOut } = NextAuth({
       async authorize(credentials) {
         const schema = z.object({
           email: z.string().min(1),
-          password: z.string().min(1),
+          password: z.string().min(1)
         })
 
         const isValidSchema = schema.safeParse(credentials)
@@ -48,7 +48,7 @@ export const { auth, signIn, signOut } = NextAuth({
         }
 
         return null
-      },
-    }),
-  ],
+      }
+    })
+  ]
 })

@@ -1,0 +1,61 @@
+# @name authenticate
+POST {{$dotenv BASE_URL}}/api/auth
+Content-Type: application/json
+
+{
+  "username": "",
+  "password": ""
+}
+
+###
+@token = {{{{authenticate.headers.body.accessToken}}}}
+
+###
+
+# @name getProducts
+GET {{$dotenv BASE_URL}}/api/products
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+###
+
+# @name createProduct
+POST {{$dotenv BASE_URL}}/api/products
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "title": "Teste de título",
+  "description": "Teste de descrição",
+  "price": 50
+}
+
+###
+@idToUpdate = 
+
+# @name updateProduct
+PUT {{$dotenv BASE_URL}}/api/products/{{idToUpdate}}
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "title": "Teste de título",
+  "description": "Teste de descrição",
+  "price": 50
+}
+
+###
+@idToFind = 
+
+# @name findProductById
+GET {{$dotenv BASE_URL}}/api/products/{{idToFind}}
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+###
+@idToDelete = 
+
+# @name findProductById
+DELETE {{$dotenv BASE_URL}}/api/products/{{idToDelete}}
+Content-Type: application/json
+Authorization: Bearer {{token}}

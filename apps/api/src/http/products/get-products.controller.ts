@@ -4,7 +4,7 @@ import { GetProducts } from '../../use-case/get-products'
 
 export const getProductsController = async (
   request: FastifyRequest,
-  response: FastifyReply,
+  response: FastifyReply
 ) => {
   try {
     const repository = new PrismaProductsRepository()
@@ -13,12 +13,12 @@ export const getProductsController = async (
     const { products } = await getProducts.execute()
 
     return response.status(200).send({
-      products,
+      products
     })
   } catch (error) {
     if (error instanceof Error) {
       return response.status(400).send({
-        message: error.message,
+        message: error.message
       })
     }
 

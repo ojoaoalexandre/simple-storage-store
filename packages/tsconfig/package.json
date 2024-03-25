@@ -1,12 +1,10 @@
 {
   "name": "@store-simple-storage/tsconfig",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "typescript": "^5.3.3"
-  }
+  "description": "Typescript rules",
+  "private": true,
+  "files": [
+    "node.json",
+    "next.json"
+  ]
 }
